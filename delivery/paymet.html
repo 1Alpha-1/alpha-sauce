@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="English">
+    <head>
+        <meta charset="UTF-8">
+        <title>Delivery</title>
+        
+        <link rel="stylesheet" href="css/dem.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        <title>Alpha Sauce</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/foundation/5.0.2/css/foundation.css'>
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="css/style.css">
+    
+        <link rel="stylesheet" href="css/demo.css">
+       
+    </head>
+   <body>
+     
+    <div class="action">
+        <a href="home.html" title="Back to home" class="btn back">Back to home</a>
+        </div>
+<h1 style="margin-bottom:40px">Use MTN MOMO: 0557162171</h1>
+<h1 style="margin-bottom:40px">Use VCash: 0509419901</h1>
+<h1 style="margin-bottom:40px">For cash on delivery, call us at 0557162171</h1>
+<div class="action">
+<a href="https://wa.me/+233209725088" class="home-support-tile" data-aura-rendered-by="29:3;a">Submit a Request</a>
+
+<br>
+
+<div class="card-wrapper">
+  <div id="card-front" class="card">
+    <div class="chip-top"></div>
+    <div class="chip"></div>
+    <div id="card-number"></div>
+    <div id="card-name"></div>
+    <div id="valid-until">Valid Until</div>
+    <div id="expiry-date"></div>
+    <div id="visa-logo">VISA</div>
+  </div>
+  <div id="card-back" class="card">
+    <div id="card-back-strip"></div>
+    <div id="card-back-box"></div>
+    <div id="card-back-cvv">392</div>
+    <div id="card-back-label">CVV Number</div>
+    
+       
+   
+  
+    
+    <script >
+    var cardFlipped;
+
+    $(document).ready(function() {
+      cardFlipped = false;
+      $("input").keyup(function() {
+        var value = $(this).val();
+        var name = "#" + $(this).attr("name");
+        $(name).text(value);
+      }).keyup();
+
+      $("#flip").focus(function() {
+        flipCard();
+      });
+      $("#flip").focusout(function() {
+        flipCard();
+      });
+    });
+
+    function flipCard() {
+      if (cardFlipped == false) {
+        // Flip the card to back
+        $("#card-front").fadeOut(300);
+        $("#card-back").fadeIn(300);
+
+        cardFlipped = true;
+      } else {
+        // Flip the card to front
+        $("#card-back").fadeOut(300);
+        $("#card-front").fadeIn(300);
+
+        cardFlipped = false;
+      }
+    }
+    </script>
+    <!--<div class="chip-top"></div>
+            <div class="chip"></div>-->
+  </div>
+</div>
+<form id="card-form">
+  <input type="text" class="cardname" name="card-name" placeholder="Name" maxlength="20" autofocus>
+  <input type="text" class="cardnumber" name="card-number" placeholder="Card Number" maxlength="19" autocomplete="off">
+  <input type="text" class="expirydate" name="expiry-date" placeholder="Expiry Date" maxlength="5">
+  <input id="flip" type="text" class="cvvnumber" name="card-back-cvv" placeholder="CVV Number" autocomplete="off" maxlength="3">
+</form>
+   </body>
+   </html>
